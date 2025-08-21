@@ -1,0 +1,2103 @@
+app:
+  description: 通过工作流自动生成对话卡片题目内容
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: Moli对话卡片题目生成_v1.0
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/openai:0.1.0@539dc0dde8ecaa84e61b8eeb154c3bb7fbc9caa80afd83763dd5860a725d2742
+kind: app
+version: 0.3.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 200
+        batch_count_limit: 900
+        file_size_limit: 200
+        image_file_size_limit: 200
+        video_file_size_limit: 200
+        workflow_file_upload_limit: 900
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: if-else
+      id: 1753336166559-source-1753339672847-target
+      selected: false
+      source: '1753336166559'
+      sourceHandle: source
+      target: '1753339672847'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: if-else
+      id: 1753336166559-source-17533396760860-target
+      selected: false
+      source: '1753336166559'
+      sourceHandle: source
+      target: '17533396760860'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: if-else
+      id: 1753336166559-source-17533396767300-target
+      selected: false
+      source: '1753336166559'
+      sourceHandle: source
+      target: '17533396767300'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: if-else
+      id: 1753336166559-source-17533396773730-target
+      selected: false
+      source: '1753336166559'
+      sourceHandle: source
+      target: '17533396773730'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 17533396773730-true-1753339886438-target
+      selected: false
+      source: '17533396773730'
+      sourceHandle: 'true'
+      target: '1753339886438'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: if-else
+      id: 1753336166559-source-1753341814322-target
+      selected: false
+      source: '1753336166559'
+      sourceHandle: source
+      target: '1753341814322'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: template-transform
+      id: 1753342022306-source-1753342086794-target
+      selected: false
+      source: '1753342022306'
+      sourceHandle: source
+      target: '1753342086794'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: template-transform
+        targetType: llm
+      id: 1753342086794-source-1753342493873-target
+      selected: false
+      source: '1753342086794'
+      sourceHandle: source
+      target: '1753342493873'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: template-transform
+      id: 1753342493873-source-1753342707768-target
+      selected: false
+      source: '1753342493873'
+      sourceHandle: source
+      target: '1753342707768'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1753341814322-true-1753346134162-target
+      selected: false
+      source: '1753341814322'
+      sourceHandle: 'true'
+      target: '1753346134162'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: template-transform
+        targetType: llm
+      id: 17533461952642-source-1753351512925-target
+      selected: false
+      source: '17533461952642'
+      sourceHandle: source
+      target: '1753351512925'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: template-transform
+      id: 1753351512925-source-17533461952645-target
+      selected: false
+      source: '1753351512925'
+      sourceHandle: source
+      target: '17533461952645'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 17533396767300-true-1753351954442-target
+      selected: false
+      source: '17533396767300'
+      sourceHandle: 'true'
+      target: '1753351954442'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: template-transform
+      id: 1753352030500-source-17536688854790-target
+      selected: false
+      source: '1753352030500'
+      sourceHandle: source
+      target: '17536688854790'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: template-transform
+        targetType: llm
+      id: 17536688854790-source-17536688927820-target
+      selected: false
+      source: '17536688854790'
+      sourceHandle: source
+      target: '17536688927820'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: template-transform
+      id: 17536688927820-source-17536688996950-target
+      selected: false
+      source: '17536688927820'
+      sourceHandle: source
+      target: '17536688996950'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 1753351954442-source-1753352030500-target
+      selected: false
+      source: '1753351954442'
+      sourceHandle: source
+      target: '1753352030500'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 17533396760860-true-1753671925489-target
+      selected: false
+      source: '17533396760860'
+      sourceHandle: 'true'
+      target: '1753671925489'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 1753671925489-source-1753672356709-target
+      selected: false
+      source: '1753671925489'
+      sourceHandle: source
+      target: '1753672356709'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: template-transform
+      id: 1753672356709-source-1753672437742-target
+      selected: false
+      source: '1753672356709'
+      sourceHandle: source
+      target: '1753672437742'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: template-transform
+        targetType: llm
+      id: 1753672437742-source-17536724640920-target
+      selected: false
+      source: '1753672437742'
+      sourceHandle: source
+      target: '17536724640920'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: template-transform
+      id: 17536724640920-source-17536724676350-target
+      selected: false
+      source: '17536724640920'
+      sourceHandle: source
+      target: '17536724676350'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1753339672847-true-1753673016249-target
+      selected: false
+      source: '1753339672847'
+      sourceHandle: 'true'
+      target: '1753673016249'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 1753673016249-source-1753673086906-target
+      selected: false
+      source: '1753673016249'
+      sourceHandle: source
+      target: '1753673086906'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: template-transform
+      id: 1753673086906-source-1753673197346-target
+      selected: false
+      source: '1753673086906'
+      sourceHandle: source
+      target: '1753673197346'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: template-transform
+        targetType: llm
+      id: 1753673197346-source-1753673132811-target
+      selected: false
+      source: '1753673197346'
+      sourceHandle: source
+      target: '1753673132811'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: template-transform
+      id: 1753673132811-source-17536732746160-target
+      selected: false
+      source: '1753673132811'
+      sourceHandle: source
+      target: '17536732746160'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 1753346134162-source-1753759688876-target
+      selected: false
+      source: '1753346134162'
+      sourceHandle: source
+      target: '1753759688876'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: template-transform
+      id: 1753759688876-source-17533461952642-target
+      selected: false
+      source: '1753759688876'
+      sourceHandle: source
+      target: '17533461952642'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 1753339886438-source-1753342022306-target
+      selected: false
+      source: '1753339886438'
+      sourceHandle: source
+      target: '1753342022306'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: template-transform
+        targetType: end
+      id: 17536732746160-source-1754286021242-target
+      source: '17536732746160'
+      sourceHandle: source
+      target: '1754286021242'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: template-transform
+        targetType: end
+      id: 17536724676350-source-1754286021242-target
+      source: '17536724676350'
+      sourceHandle: source
+      target: '1754286021242'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: template-transform
+        targetType: end
+      id: 17536688996950-source-1754286021242-target
+      source: '17536688996950'
+      sourceHandle: source
+      target: '1754286021242'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: template-transform
+        targetType: end
+      id: 1753342707768-source-1754286021242-target
+      source: '1753342707768'
+      sourceHandle: source
+      target: '1754286021242'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: template-transform
+        targetType: end
+      id: 17533461952645-source-1754286021242-target
+      source: '17533461952645'
+      sourceHandle: source
+      target: '1754286021242'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: end
+      id: 1753339672847-false-1754286021242-target
+      source: '1753339672847'
+      sourceHandle: 'false'
+      target: '1754286021242'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: end
+      id: 17533396760860-false-1754286021242-target
+      source: '17533396760860'
+      sourceHandle: 'false'
+      target: '1754286021242'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: end
+      id: 17533396767300-false-1754286021242-target
+      source: '17533396767300'
+      sourceHandle: 'false'
+      target: '1754286021242'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: end
+      id: 17533396773730-false-1754286021242-target
+      source: '17533396773730'
+      sourceHandle: 'false'
+      target: '1754286021242'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: end
+      id: 1753341814322-false-1754286021242-target
+      source: '1753341814322'
+      sourceHandle: 'false'
+      target: '1754286021242'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - label: topic
+          max_length: 192
+          options: []
+          required: true
+          type: text-input
+          variable: topic
+        - label: level
+          max_length: 48
+          options:
+          - '1'
+          - '2'
+          - '3'
+          - '4'
+          - '5'
+          - '6'
+          required: true
+          type: select
+          variable: level
+        - label: num_questions_type_10
+          max_length: 48
+          options: []
+          required: true
+          type: number
+          variable: num_questions_type_10
+        - label: num_questions_type_11
+          max_length: 48
+          options: []
+          required: true
+          type: number
+          variable: num_questions_type_11
+        - label: num_questions_type_12
+          max_length: 48
+          options: []
+          required: true
+          type: number
+          variable: num_questions_type_12
+        - label: num_questions_type_13
+          max_length: 48
+          options: []
+          required: true
+          type: number
+          variable: num_questions_type_13
+        - label: num_questions_type_14
+          max_length: 48
+          options: []
+          required: true
+          type: number
+          variable: num_questions_type_14
+        - label: cid
+          max_length: 48
+          options: []
+          required: true
+          type: text-input
+          variable: cid
+      height: 272
+      id: '1753336166559'
+      position:
+        x: 69.07888662360529
+        y: 414.6135195705076
+      positionAbsolute:
+        x: 69.07888662360529
+        y: 414.6135195705076
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: '>'
+            id: 414ba01c-3fbe-4da1-906c-1389e899a22f
+            value: '0'
+            varType: number
+            variable_selector:
+            - '1753336166559'
+            - num_questions_type_10
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 音频配对
+        type: if-else
+      height: 126
+      id: '1753339672847'
+      position:
+        x: 488
+        y: -15.646998365909838
+      positionAbsolute:
+        x: 488
+        y: -15.646998365909838
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: '>'
+            id: 1872f4d0-aa6e-4f8b-af68-7aebe87f4db1
+            value: '0'
+            varType: number
+            variable_selector:
+            - '1753336166559'
+            - num_questions_type_11
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 对话理解
+        type: if-else
+      height: 126
+      id: '17533396760860'
+      position:
+        x: 488
+        y: 266
+      positionAbsolute:
+        x: 488
+        y: 266
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: '>'
+            id: 407e9a9e-7142-4bf4-a41e-d998e9043347
+            value: '0'
+            varType: number
+            variable_selector:
+            - '1753336166559'
+            - num_questions_type_12
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 听音重组
+        type: if-else
+      height: 126
+      id: '17533396767300'
+      position:
+        x: 488
+        y: 563.5681117423045
+      positionAbsolute:
+        x: 488
+        y: 563.5681117423045
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: '>'
+            id: bc82919e-2ca1-4bd8-bc69-a9fc2abc07ba
+            value: '0'
+            varType: number
+            variable_selector:
+            - '1753336166559'
+            - num_questions_type_13
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 选择应答
+        type: if-else
+      height: 126
+      id: '17533396773730'
+      position:
+        x: 488
+        y: 853.4182911836281
+      positionAbsolute:
+        x: 488
+        y: 853.4182911836281
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4.1-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 243c4091-01b6-4227-af77-b4db7ec9f1b0
+          role: system
+          text: "# 角色\n您是一位精通中英双语的儿童英语教学专家，尤其擅长为3-12岁的孩子设计互动式对话学习场景。\n\n# 任务\n请根据用户输入的\
+            \ **话题 ({{{{#1753336166559.topic#}}}})**、**英语水平 ({{{{#1753336166559.level#}}}})**\
+            \ 和 **生成数量 ({{{{#1753336166559.num_questions_type_13#}}}})**，创作出指定数量的、完整的简短英语对话场景。\n\
+            \n# 场景要求\n每个场景必须包含：\n1.  **对话内容 (dialogue_turns)**：一个包含多轮对话的列表，每轮对话需指明说话人（例如\
+            \ \"Speaker A\", \"Speaker B\"）和对话内容。\n2.  **正确回复 (correct_option)**：针对对话情景，学习者应该做出的唯一正确回答。\n\
+            3.  **干扰项 (distractor_options)**：提供一个符合语境但逻辑不正确的干扰选项。\n4.  **对于英语水平（level）的定义**：\n\
+            \  - Level 1：能理解常见词汇与基本指令\n  - Level 2：能进行问候、自我介绍、表达喜好\n  - Level 3：可用完整句型描述日常情境\n\
+            \  - Level 4：能围绕熟悉话题进行连贯表达\n  - Level 5：表达较为流畅，能表达观点和理解一般文本\n  - Level\
+            \ 6：能进行日常交流与基础书面表达\n\n# 强制规则（MANDATORY RULES）\n- 对话内容（`line`字段）**必须**是包含至少3个单词的、有意义的英文句子。\n\
+            - **严禁（STRICTLY FORBIDDEN）** 在`line`字段中输出空字符串（\"\"）或无意义的占位符。\n- 严格按照下面示例的JSON格式输出，不要添加任何额外的解释。\n\
+            \n# 输出格式\n请输出一个标准 JSON 对象，其中包含一个名为 `scenarios` 的数组。\n\n## 示例输出 (输入: topic=\"\
+            打车\", level=\"Level 3\", card_quantity=1)\n{\n  \"scenarios\": [\n   \
+            \ {\n      \"dialogue_turns\": [\n        {\n          \"speaker\": \"\
+            Child\",\n          \"line\": \"Mom, how do we get a taxi?\"\n       \
+            \ },\n        {\n          \"speaker\": \"Mother\",\n          \"line\"\
+            : \"We can call one or just wave our hand.\"\n        }\n      ],\n  \
+            \    \"correct_option\": \"Let's wave our hand!\",\n      \"distractor_options\"\
+            : [\n        \"Let's go home.\"\n      ]\n    }\n  ]\n}"
+        selected: false
+        title: 对话场景生成
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1753339886438'
+      position:
+        x: 902.0493841724706
+        y: 884.803049107735
+      positionAbsolute:
+        x: 902.0493841724706
+        y: 884.803049107735
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: '>'
+            id: 792c5c34-f1ed-4af2-86df-563810707f6d
+            value: '0'
+            varType: number
+            variable_selector:
+            - '1753336166559'
+            - num_questions_type_14
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 口语应答
+        type: if-else
+      height: 126
+      id: '1753341814322'
+      position:
+        x: 488
+        y: 1122.5324415614411
+      positionAbsolute:
+        x: 488
+        y: 1122.5324415614411
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import random\nimport time\nimport json\n\ndef main(llm_string_output:\
+          \ str) -> dict:\n    processed_scenarios = []\n    \n    # 1. 直接解析来自LLM节点的原始字符串输出\n\
+          \    try:\n        data = json.loads(llm_string_output)\n        scenarios_list\
+          \ = data.get(\"scenarios\", [])\n    except json.JSONDecodeError:\n    \
+          \    return {\"error\": f\"Input string is not a valid JSON. Content: {llm_string_output}\"\
+          , \"processed_scenarios\": []}\n\n    if not scenarios_list:\n        return\
+          \ {\"error\": \"No scenarios found in the parsed JSON.\", \"processed_scenarios\"\
+          : []}\n\n    # 2. 循环处理每一个场景\n    for scenario in scenarios_list:\n     \
+          \   try:\n            # 2a. 将对话内容处理成新的 question 列表格式\n            dialogue_turns\
+          \ = scenario.get(\"dialogue_turns\", [])\n            formatted_question_list\
+          \ = []\n            speaker_map = {}\n            for i, turn in enumerate(dialogue_turns):\n\
+          \                speaker = turn.get(\"speaker\")\n                if speaker\
+          \ not in speaker_map:\n                    role = \"left_girl\" if len(speaker_map)\
+          \ % 2 == 0 else \"right_girl\"\n                    speaker_map[speaker]\
+          \ = role\n\n                formatted_question_list.append({\n         \
+          \           \"role\": speaker_map[speaker],\n                    \"type\"\
+          : \"eng_cn_audio\",\n                    \"eng\": turn.get(\"line\", \"\"\
+          ),\n                    \"audio_url\": True\n                })\n      \
+          \      \n            # 2b. 处理选择题选项（混合、打乱、分配Key）\n            correct_text\
+          \ = scenario.get(\"correct_option\") # 注意：这里用的是 correct_option，不是中文\n  \
+          \          distractor_options_text = scenario.get(\"distractor_options\"\
+          , [])\n            all_options_text = [correct_text] + distractor_options_text\n\
+          \            random.shuffle(all_options_text)\n            \n          \
+          \  final_options = []\n            answer_key = \"\"\n            for i,\
+          \ text in enumerate(all_options_text):\n                key = chr(65 + i)\n\
+          \                option_data = {\"key\": key, \"type\": \"text\", \"text\"\
+          : text}\n                final_options.append(option_data)\n           \
+          \     if text == correct_text:\n                    answer_key = key\n \
+          \           \n            # 2c. 打包成最终的“半成品”数据\n            processed_scenario\
+          \ = {\n                \"question_turns\": formatted_question_list,\n  \
+          \              \"dialogue_turns_text_only\": dialogue_turns,\n         \
+          \       \"question_for_user\": scenario.get(\"question_for_user\", \"选择合适的回复\"\
+          ),\n                \"answer_key\": answer_key,\n                \"options\"\
+          : final_options\n            }\n            processed_scenarios.append(processed_scenario)\n\
+          \n        except Exception as e:\n            print(f\"Error processing\
+          \ a scenario: {e}\")\n            continue\n            \n    return {\"\
+          processed_scenarios\": processed_scenarios}"
+        code_language: python3
+        desc: ''
+        outputs:
+          processed_scenarios:
+            children: null
+            type: array[object]
+        selected: false
+        title: 选项处理与重组
+        type: code
+        variables:
+        - value_selector:
+          - '1753339886438'
+          - text
+          variable: llm_string_output
+      height: 54
+      id: '1753342022306'
+      position:
+        x: 1328.8658129030878
+        y: 884.803049107735
+      positionAbsolute:
+        x: 1328.8658129030878
+        y: 884.803049107735
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        selected: false
+        template: "{% for scenario in processed_scenarios %}\n{\n    \"template\"\
+          : \"t000010\",\n    \"remark\": \"选择应答\",\n    \"type\":\"J\",\n    \"topic_id\"\
+          :\"{{ cid }}\",\n    \"topic\":\"{{ topic }}\",\n    \"level\":\"{{ level\
+          \ }}\",\n    \"vocabulary_group\":\"A\",\n    \"question\": [\n        {#\
+          \ 新增的循环，用于生成每一句对话 #}\n        {% for turn in scenario['question_turns']\
+          \ %}\n        {\n            \"role\": \"{{ turn['role'] }}\",\n       \
+          \     \"type\": \"eng_cn_audio\",\n            \"eng\": \"{{ turn['eng']\
+          \ | e }}\",\n            \"audio_url\": true\n        }{% if not loop.last\
+          \ %},{% endif %}\n        {% endfor %}\n    ],\n    \"title\": \"{{ scenario['question_for_user']\
+          \ | default('选择合适的回复', true) }}\", \n    \"title_position\": 2, \n    \"\
+          answer_type\": \"text\", \n    \"answer\": \"{{ scenario['answer_key'] }}\"\
+          , \n    \"answer_input\": \"radio\", \n    \"options\": [\n        {% for\
+          \ option in scenario['options'] %}\n        {\n            \"key\": \"{{\
+          \ option['key'] }}\",\n            \"type\": \"text\",\n            \"text\"\
+          : \"{{ option['text'] | e }}\"\n        }{% if not loop.last %},{% endif\
+          \ %}\n        {% endfor %}\n    ]\n}\n{% if not loop.last %},{% endif %}\n\
+          {% endfor %}"
+        title: 生成最终JSON 4
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1753342022306'
+          - processed_scenarios
+          variable: processed_scenarios
+        - value_selector:
+          - '1753336166559'
+          - topic
+          value_type: string
+          variable: topic
+        - value_selector:
+          - '1753336166559'
+          - level
+          value_type: string
+          variable: level
+        - value_selector:
+          - '1753336166559'
+          - cid
+          value_type: string
+          variable: cid
+      height: 54
+      id: '1753342086794'
+      position:
+        x: 1667.8211984834427
+        y: 884.5104374650145
+      positionAbsolute:
+        x: 1667.8211984834427
+        y: 884.5104374650145
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4.1-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 1072fafb-9760-4a13-854b-0b9c4bb99339
+          role: system
+          text: "# 角色\n您是一名专业的AI应用JSON格式校验专家。\n\n# 任务\n请对输入的JSON数据 ({{{{#1753342086794.output#}}}})\
+            \ 进行严格的结构和逻辑校验。\n\n# 校验规则\n1.  **顶级字段**: 必须存在 `template`, `remark`, `question`,\
+            \ `title`, `answer`, `options`。\n2.  **question 数组**:\n    - 必须是包含一个对象的数组。\n\
+            \    - 对象内必须包含 `conversation_id`(非空字符串), `audio_start`(字符串), `audio_end`(字符串),\
+            \ `message_start`(字符串), `message_end`(字符串), `show_conversation_text`(\"\
+            True\"或\"False\"字符串)。\n3.  **answer 字段**:\n    - `answer` 的值（如 \"A\"）必须是\
+            \ `options` 数组中某个元素的 `key` 值。\n4.  **options 数组**:\n    - 必须是一个非空数组。\n\
+            \    - 每个元素必须包含 `key`(大写字母字符串) 和 `text`(非空字符串)。\n    - `key` 的值在数组内必须是唯一的。\n\
+            \n# 输出要求\n返回标准JSON格式结果，包含 `is_valid` (bool) 和 `error_details` (array)。如果无效，请在\
+            \ `error_details` 中详细说明不符合规则的地方。"
+        selected: false
+        title: 题目准确性校验
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1753342493873'
+      position:
+        x: 2009.2604710189908
+        y: 884.803049107735
+      positionAbsolute:
+        x: 2009.2604710189908
+        y: 884.803049107735
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        selected: false
+        template: "{% for scenario in processed_scenarios %}\n## ❏ 卡片审核清单 (对话选择)\n\
+          \n---\n\n### **1. 基本信息**\n\n- **对话ID**: `{{ scenario.conversation_id }}`\n\
+          - **模板类型**: `t000010` (选择应答)\n\n### **2. 对话内容预览**\n\n{# 使用方括号 ['line'] 来替代\
+          \ .line #}\n{% for turn in scenario.dialogue_turns_text_only %}\n- **{{\
+          \ turn['speaker'] }}**: {{ turn['line'] }}\n{% endfor %}\n\n### **3. 用户任务与选项**\n\
+          \n- **任务标题**: 选择合适的回复\n- **选项列表**:\n{# 为保持风格统一，这里也使用方括号 #}\n{% for option\
+          \ in scenario.options %}\n  - **[{{ option['key'] }}]**: {{ option['text']\
+          \ }}{% if option['key'] == scenario.answer_key %}  **<-- ✅ 正确答案**{% endif\
+          \ %}\n{% endfor %}\n\n### **4. 系统判定**\n- **正确答案Key**: `{{ scenario.answer_key\
+          \ }}`\n\n{% if not loop.last %}\n\n========================================\n\
+          \n{% endif %}\n{% endfor %}"
+        title: 人工审核格式转换-13
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1753342022306'
+          - processed_scenarios
+          variable: processed_scenarios
+      height: 54
+      id: '1753342707768'
+      position:
+        x: 2328.156505206653
+        y: 884.803049107735
+      positionAbsolute:
+        x: 2328.156505206653
+        y: 884.803049107735
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4.1-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 62e3ca54-85dc-46e1-9386-1e5ea025fc45
+          role: system
+          text: "# 角色\n您是一位顶级的儿童英语教学内容设计师，专注于创设能激发孩子开口说话的沉浸式对话场景。\n\n# 任务\n请根据用户输入的\
+            \ **话题 ({{{{#1753336166559.topic#}}}})**、**英语水平 ({{{{#1753336166559.level#}}}})**\
+            \ 和 **生成数量 ({{{{#1753336166559.num_questions_type_14#}}}})**，创作出指定数量的英语对话场景。每个场景的结尾都需要用户根据一个中文提示，说出对应的英文句子。\n\
+            \n# 场景要求\n每个场景必须包含：\n1.  **对话内容 (dialogue_turns)**：一个引人入胜的多轮对话列表。\n2.\
+            \  **用户提示句 (prompt_for_user_cn)**：一句中文提示，这是用户需要翻译并用英语说出来的内容。此句必须与前面的对话内容在逻辑上连贯。\n\
+            3.  **标准英文答案 (correct_answer_en)**：`prompt_for_user_cn`的准确、地道的英文翻译。这将作为语音评测的参考标准。\n\
+            4.  **对于英语水平（level）的定义**：\n  - Level 1：能理解常见词汇与基本指令\n  - Level 2：能进行问候、自我介绍、表达喜好\n\
+            \  - Level 3：可用完整句型描述日常情境\n  - Level 4：能围绕熟悉话题进行连贯表达\n  - Level 5：表达较为流畅，能表达观点和理解一般文本\n\
+            \  - Level 6：能进行日常交流与基础书面表达\n\n# 强制规则（MANDATORY RULES - NON-NEGOTIABLE）\n\
+            -   `dialogue_turns`中的`line`字段**必须**是内容完整、有意义的句子，**严禁为空**。\n-   `prompt_for_user_cn`字段**必须**是一句完整的中文句子，**严禁为空**。\n\
+            -   `correct_answer_en`字段**必须**是一句完整的英文句子，**严禁为空**。\n-   `correct_answer_en`**必须**是`prompt_for_user_cn`的精准翻译。\n\
+            -   **必须**严格按照下面示例的JSON格式输出，不要添加任何额外的解释或文字。\n\n# 输出格式\n请输出一个标准 JSON 对象，其中包含一个名为\
+            \ `scenarios` 的数组。\n\n## 示例输出 (输入: topic=\"打车\", level=\"Level 3\", card_quantity=1)\n\
+            {\n  \"scenarios\": [\n    {\n      \"dialogue_turns\": [\n        {\n\
+            \          \"speaker\": \"Passenger\",\n          \"line\": \"What color\
+            \ is the cab coming in this way?\"\n        },\n        {\n          \"\
+            speaker\": \"Passenger\",\n          \"line\": \"I said what is the color\
+            \ of your cab?\"\n        }\n      ],\n      \"prompt_for_user_cn\": \"\
+            我的出租车是黄色的。\",\n      \"correct_answer_en\": \"My cab is yellow.\"\n  \
+            \  }\n  ]\n}"
+        selected: false
+        title: 口语场景生成
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1753346134162'
+      position:
+        x: 902.0493841724706
+        y: 1154.2996047244285
+      positionAbsolute:
+        x: 902.0493841724706
+        y: 1154.2996047244285
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        selected: false
+        template: "{% for scenario in processed_scenarios %}\n{\n    \"template\"\
+          : \"t000011\",\n    \"remark\": \"选择应答\",\n    \"type\":\"K\",\n    \"topic_id\"\
+          :\"{{ cid }}\",\n    \"topic\":\"{{ topic }}\",\n    \"level\":\"{{ level\
+          \ }}\",\n    \"vocabulary_group\":\"A\",\n    \"question\": [\n        {#\
+          \ 新增的循环，用于生成每一句对话 #}\n        {% for turn in scenario['question_turns']\
+          \ %}\n        {\n            \"role\": \"{{ turn['role'] }}\",\n       \
+          \     \"type\": \"eng_cn_audio\",\n            \"eng\": \"{{ turn['eng']\
+          \ | e }}\",\n            \"audio_url\": true\n        }{% if not loop.last\
+          \ %},{% endif %}\n        {% endfor %}\n    ],\n    \"title\": \"尝试回答：{{\
+          \ scenario['prompt_for_user_cn'] }}\",\n    \"title_position\": 2,\n   \
+          \ \"answer_type\": \"text\",\n    \"answer\": \"{{ scenario['correct_answer_en']\
+          \ | e }}\",\n    \"answer_input\": \"record\",\n    \"options\": []\n}\n\
+          {% if not loop.last %},{% endif %}\n{% endfor %}"
+        title: 生成最终JSON 5
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1753759688876'
+          - processed_scenarios
+          variable: processed_scenarios
+        - value_selector:
+          - '1753336166559'
+          - topic
+          value_type: string
+          variable: topic
+        - value_selector:
+          - '1753336166559'
+          - level
+          value_type: string
+          variable: level
+        - value_selector:
+          - '1753336166559'
+          - cid
+          value_type: string
+          variable: cid
+      height: 54
+      id: '17533461952642'
+      position:
+        x: 1667.8211984834427
+        y: 1154.2996047244285
+      positionAbsolute:
+        x: 1667.8211984834427
+        y: 1154.2996047244285
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        selected: false
+        template: '{% for scenario in processed_scenarios %}
+
+          ## ❏ 卡片审核清单 (口语应答)
+
+
+          ---
+
+
+          ### **1. 基本信息**
+
+
+          - **对话ID**: `{{ scenario[''conversation_id''] }}`
+
+          - **模板类型**: `t000011` (口语应答)
+
+
+          ### **2. 对话内容预览**
+
+
+          {% for turn in scenario[''dialogue_turns_text_only''] %}
+
+          - **{{ turn[''speaker''] }}**: {{ turn[''line''] }}
+
+          {% endfor %}
+
+
+          ### **3. 用户口语任务**
+
+
+          - **任务提示 (中文)**: {{ scenario[''prompt_for_user_cn''] }}
+
+          - **标准答案 (英文)**: {{ scenario[''correct_answer_en''] }}
+
+
+          ### **4. 校验要点**
+
+          - [ ] 中文提示与英文答案是否互为精准翻译？
+
+          - [ ] 任务提示是否与上方对话情景逻辑连贯？
+
+          - [ ] 英文答案的难度是否符合设定的语言等级？
+
+
+          {% if not loop.last %}
+
+
+          ========================================
+
+
+          {% endif %}
+
+          {% endfor %}'
+        title: 人工审核格式转换-14
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1753759688876'
+          - processed_scenarios
+          variable: processed_scenarios
+      height: 54
+      id: '17533461952645'
+      position:
+        x: 2328.156505206653
+        y: 1154.2996047244285
+      positionAbsolute:
+        x: 2328.156505206653
+        y: 1154.2996047244285
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4.1-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: c11b7fe6-fa1a-415b-98bc-ab62110ee26c
+          role: system
+          text: "# 角色\n您是一位极其严谨的AI教研内容质检专家，负责对JSON格式的“口语应答”题卡数据进行自动化质量审核。\n\n# 任务\n\
+            请对以下输入的JSON数据 ({{{{#17533461952642.output#}}}}) 进行严格的、逐项的校验。\n\n# 核心校验规则\
+            \ (必须严格遵守)\n\n1.  **字段完整性**:\n    -   检查 `template`, `remark`, `question`,\
+            \ `title`, `answer`, `answer_input`, `options` 这些顶级字段是否都存在。\n\n2.  **内容与格式**:\n\
+            \    -   `template` 字段的值**必须**是 `\"t000011\"`。\n    -   `title` 字段的内容**必须**以`\"\
+            尝试回答：\"`开头，且冒号后必须有非空的中文内容。\n    -   `answer` 字段的内容**必须**是一个非空的、完整的英文句子。\n\
+            \    -   `options` 字段**必须**是一个**空数组** `[]`。\n    -   `answer_input` 字段的值**必须**是\
+            \ `\"voice\"`。\n\n3.  **逻辑一致性 (最重要)**:\n    -   **翻译准确性**: `answer`字段中的英文句子，是否是`title`字段中中文提示的准确、地道、无误的翻译？请进行中英文比对判断。\n\
+            \n# 输出要求\n返回标准JSON格式的结果。如果所有校验通过，`is_valid`为`true`。若有任何一条规则不满足，`is_valid`为`false`，并在`error_details`中详细说明问题。\n\
+            \n{\n    \"is_valid\": bool,\n    \"error_details\": [\n        {\n  \
+            \          \"field\": \"字段路径 (e.g., title)\",\n            \"issue_type\"\
+            : \"MISSING_FIELD | INVALID_CONTENT | INCONSISTENT_LOGIC\",\n        \
+            \    \"description\": \"具体问题描述。例如：'answer字段的英文翻译与title字段的中文提示不匹配。'\",\n\
+            \            \"suggestion\": \"修复建议（可选）\"\n        }\n    ],\n    \"validated_data\"\
+            : {}  // 仅在 is_valid 为 true 时，返回原始的、通过校验的数据\n}"
+        selected: false
+        title: 题目准确性校验
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1753351512925'
+      position:
+        x: 2009.2604710189908
+        y: 1154.2996047244285
+      positionAbsolute:
+        x: 2009.2604710189908
+        y: 1154.2996047244285
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4.1-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: b8787e38-46f5-48ac-9400-8d0f60106c7d
+          role: system
+          text: "# 角色\n您是一位顶级的儿童英语教学内容专家，擅长设计句子结构训练任务。\n\n# 任务\n请根据用户输入的 **话题 ({{{{#1753336166559.topic#}}}})**、**英语水平\
+            \ ({{{{#1753336166559.level#}}}})** 和 **生成数量 ({{{{#1753336166559.num_questions_type_12#}}}})**，创作出指定数量的、包含多轮对话和句子重组任务的场景。\n\
+            \n# 场景要求\n每个场景必须包含：\n1.  **对话内容 (dialogue_turns)**：一个完整的多轮对话。\n2.  **待重组的句子\
+            \ (sentence_to_reorder)**：从上方对话中选取的一个完整的、适合进行重组练习的句子。\n3.  **分词词块 (reorder_chunks)**：将`sentence_to_reorder`拆分成有意义的、用于重组的词或短语块。**这非常重要**，请不要按单个单词拆分，要把有固定搭配的短语（如\
+            \ \"the color of\", \"what is\"）作为一个整体。\n4.  **对于英语水平（level）的定义**：\n \
+            \ - Level 1：能理解常见词汇与基本指令\n  - Level 2：能进行问候、自我介绍、表达喜好\n  - Level 3：可用完整句型描述日常情境\n\
+            \  - Level 4：能围绕熟悉话题进行连贯表达\n  - Level 5：表达较为流畅，能表达观点和理解一般文本\n  - Level\
+            \ 6：能进行日常交流与基础书面表达\n\n# 强制规则 (MANDATORY RULES)\n-   所有`line`、`sentence_to_reorder`字段严禁为空。\n\
+            -   `reorder_chunks`数组中的所有元素拼接后，必须能**一字不差地**还原成`sentence_to_reorder`。\n\
+            -   严格按照下面示例的JSON格式输出，不要添加任何额外的解释。\n\n# 输出格式\n请输出一个标准 JSON 对象，其中包含一个名为\
+            \ `scenarios` 的数组。\n\n## 示例输出 (输入: topic=\"打车\", level=\"Level 3\", card_quantity=1)\n\
+            {\n  \"scenarios\": [\n    {\n      \"dialogue_turns\": [\n        {\n\
+            \          \"speaker\": \"A\",\n          \"line\": \"What color is the\
+            \ cab coming in this way?\"\n        },\n        {\n          \"speaker\"\
+            : \"B\",\n          \"line\": \"what?\"\n        }\n      ],\n      \"\
+            sentence_to_reorder\": \"I said what is the color of your cab?\",\n  \
+            \    \"reorder_chunks\": [\n        \"I said\",\n        \"what is\",\n\
+            \        \"the color of\",\n        \"your cab\"\n      ]\n    }\n  ]\n\
+            }"
+        selected: false
+        title: 重组场景生成
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1753351954442'
+      position:
+        x: 902.0493841724706
+        y: 597.3489695291591
+      positionAbsolute:
+        x: 902.0493841724706
+        y: 597.3489695291591
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import random\nimport time\nimport json\n\ndef main(llm_string_output:\
+          \ str) -> dict:\n    processed_scenarios = []\n    \n    try:\n        data\
+          \ = json.loads(llm_string_output)\n        scenarios_list = data.get(\"\
+          scenarios\", [])\n    except json.JSONDecodeError:\n        return {\"error\"\
+          : \"Input string is not valid JSON.\", \"processed_scenarios\": []}\n\n\
+          \    if not scenarios_list:\n        return {\"error\": \"No scenarios found\
+          \ in the parsed JSON.\", \"processed_scenarios\": []}\n\n    for scenario\
+          \ in scenarios_list:\n        try:\n            # --- START: 本次主要修改区域 ---\n\
+          \            dialogue_turns = scenario.get(\"dialogue_turns\", [])\n   \
+          \         formatted_question_list = []\n            speaker_map = {}\n \
+          \           for i, turn in enumerate(dialogue_turns):\n                speaker\
+          \ = turn.get(\"speaker\")\n                if speaker not in speaker_map:\n\
+          \                    role = \"left_girl\" if len(speaker_map) % 2 == 0 else\
+          \ \"right_girl\"\n                    speaker_map[speaker] = role\n\n  \
+          \              formatted_question_list.append({\n                    \"\
+          role\": speaker_map[speaker],\n                    \"type\": \"eng_cn_audio\"\
+          ,\n                    \"eng\": turn.get(\"line\", \"\"),\n            \
+          \        \"audio_url\": True\n                })\n            # --- END:\
+          \ 本次主要修改区域 ---\n\n            original_chunks = scenario.get(\"reorder_chunks\"\
+          , [])\n            shuffled_chunks = original_chunks[:]\n            random.shuffle(shuffled_chunks)\n\
+          \            \n            options = []\n            for chunk in shuffled_chunks:\n\
+          \                options.append({ \"key\": chunk, \"type\": \"text\", \"\
+          text\": chunk })\n\n            processed_scenario = {\n               \
+          \ \"question_turns\": formatted_question_list, # 传递处理好的对话列表\n          \
+          \      \"dialogue_turns_text_only\": dialogue_turns, # 保留原始对话用于审核\n    \
+          \            \"correct_sentence\": scenario.get(\"sentence_to_reorder\"\
+          , \"\"),\n                \"options\": options\n            }\n        \
+          \    processed_scenarios.append(processed_scenario)\n\n        except Exception\
+          \ as e:\n            print(f\"Error processing a scenario: {e}\")\n    \
+          \        continue\n            \n    return {\"processed_scenarios\": processed_scenarios}"
+        code_language: python3
+        desc: ''
+        outputs:
+          processed_scenarios:
+            children: null
+            type: array[object]
+        selected: false
+        title: 场景处理与词块打乱
+        type: code
+        variables:
+        - value_selector:
+          - '1753351954442'
+          - text
+          variable: llm_string_output
+      height: 54
+      id: '1753352030500'
+      position:
+        x: 1328.8658129030878
+        y: 597.3489695291591
+      positionAbsolute:
+        x: 1328.8658129030878
+        y: 597.3489695291591
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        selected: false
+        template: "{% for scenario in processed_scenarios %}\n{\n    \"template\"\
+          : \"t000009\",\n    \"remark\": \"听音重组\",\n    \"type\":\"I\",\n    \"topic_id\"\
+          :\"{{ cid }}\",\n    \"topic\":\"{{ topic }}\",\n    \"level\":\"{{ level\
+          \ }}\",\n    \"vocabulary_group\":\"A\",\n    \"question\": [\n        {#\
+          \ 新增的循环，用于生成每一句对话 #}\n        {% for turn in scenario['question_turns']\
+          \ %}\n        {\n            \"role\": \"{{ turn['role'] }}\",\n       \
+          \     \"type\": \"eng_cn_audio\",\n            \"eng\": \"{{ turn['eng']\
+          \ | e }}\",\n            \"audio_url\": true\n        }{% if not loop.last\
+          \ %},{% endif %}\n        {% endfor %}\n    ],\n    \"show_conversation_text\"\
+          :\"True\",\n    \"title\": \"重组句子\", \n    \"title_position\": 2, \n   \
+          \ \"answer_type\": \"text\", \n    \"answer\": \"{{ scenario['correct_sentence']\
+          \ | e }}\", \n    \"answer_input\": \"text_block\", \n    \"options\": [\n\
+          \        {% for option in scenario['options'] %}\n        {\n          \
+          \  \"key\": \"{{ option['key'] | e }}\",\n            \"type\": \"text\"\
+          ,\n            \"text\": \"{{ option['text'] | e }}\"\n        }{% if not\
+          \ loop.last %},{% endif %}\n        {% endfor %}\n    ]\n}\n{% if not loop.last\
+          \ %},{% endif %}\n{% endfor %}"
+        title: 生成最终JSON 3
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1753352030500'
+          - processed_scenarios
+          variable: processed_scenarios
+        - value_selector:
+          - '1753336166559'
+          - topic
+          value_type: string
+          variable: topic
+        - value_selector:
+          - '1753336166559'
+          - level
+          value_type: string
+          variable: level
+        - value_selector:
+          - '1753336166559'
+          - cid
+          value_type: string
+          variable: cid
+      height: 54
+      id: '17536688854790'
+      position:
+        x: 1667.8211984834427
+        y: 597.3489695291591
+      positionAbsolute:
+        x: 1667.8211984834427
+        y: 597.3489695291591
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4.1-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 1072fafb-9760-4a13-854b-0b9c4bb99339
+          role: system
+          text: "# 角色\n您是一位严谨的AI教研内容质检专家，负责对JSON格式的“听音重组”题卡数据进行自动化质量审核。\n\n# 任务\n\
+            请对以下输入的JSON数据 ({{{{#17536688854790.output#}}}}) 进行严格的、逐项的校验。\n\n# 核心校验规则\n\
+            \n1.  **字段完整性与格式**:\n    -   检查 `template`, `remark`, `question`, `title`,\
+            \ `answer`, `options` 等顶级字段是否存在。\n    -   `template` 字段的值**必须**是 `\"t000009\"\
+            `。\n    -   `options` 字段**必须**是一个**非空数组**。\n\n2.  **内容与逻辑一致性 (最重要)**:\n\
+            \    -   **重组校验**: 将`options`数组中所有元素的`text`值取出，判断它们是否能**不重不漏地**拼接成`answer`字段中的完整句子。语序可以忽略，但内容和数量必须完全一致。\n\
+            \    -   **上下文校验**: `answer`字段中的完整句子，是否在`question`所代表的对话上下文中出现过或逻辑上完全合理？\n\
+            \n# 输出要求\n返回标准JSON格式的结果。若有任何一条规则不满足，`is_valid`为`false`，并在`error_details`中详细说明问题。\n\
+            \n{\n    \"is_valid\": bool,\n    \"error_details\": [\n        {\n  \
+            \          \"field\": \"options/answer\",\n            \"issue_type\"\
+            : \"INCONSISTENT_CONTENT\",\n            \"description\": \"具体问题描述。例如：'options中的词块无法完整拼接成answer句子，缺少了\
+            \ 'of'。' 或 'answer句子内容与对话上下文无关。'\",\n            \"suggestion\": \"修复建议（可选）\"\
+            \n        }\n    ],\n    \"validated_data\": {}\n}"
+        selected: false
+        title: 题目准确性校验 (1)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '17536688927820'
+      position:
+        x: 2009.2604710189908
+        y: 597.3489695291591
+      positionAbsolute:
+        x: 2009.2604710189908
+        y: 597.3489695291591
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        selected: false
+        template: "{% for scenario in processed_scenarios %}\n## ❏ 卡片审核清单 (听音重组)\n\
+          \n---\n\n### **1. 基本信息**\n\n- **对话ID**: `{{ scenario['conversation_id']\
+          \ }}`\n- **模板类型**: `t000009` (听音重组)\n\n### **2. 对话内容预览**\n\n{% for turn\
+          \ in scenario['dialogue_turns_text_only'] %}\n- **{{ turn['speaker'] }}**:\
+          \ {{ turn['line'] }}\n{% endfor %}\n\n### **3. 句子重组任务**\n\n- **标准答案 (完整句子)**:\
+          \ {{ scenario['correct_sentence'] }}\n- **打乱的词块 (Options)**:\n  - `{{ scenario['options']\
+          \ | map(attribute='text') | join(\"` `\") }}`\n\n### **4. 校验要点**\n- [ ]\
+          \ 词块划分是否合理、有意义？\n- [ ] 词块是否能准确无误地还原成标准答案？\n- [ ] 任务句子的难度是否符合设定的语言等级？\n\n\
+          {% if not loop.last %}\n\n========================================\n\n{%\
+          \ endif %}\n{% endfor %}"
+        title: 人工审核格式转换 -12
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1753352030500'
+          - processed_scenarios
+          variable: processed_scenarios
+      height: 54
+      id: '17536688996950'
+      position:
+        x: 2328.156505206653
+        y: 597.3489695291591
+      positionAbsolute:
+        x: 2328.156505206653
+        y: 597.3489695291591
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4.1-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: ada8314a-0052-410c-a0fe-9d29c133e0a2
+          role: system
+          text: "# 角色\n您是一位资深的少儿英语教学专家，擅长设计考验真实理解能力的对话情景题。\n\n# 任务\n请根据用户输入的话题{{#1753336166559.topic#}}、难度水平{{#1753336166559.level#}}和生成数量{{#1753336166559.num_questions_type_11#}}，创作出完整的“对话理解”场景。\n\
+            \n# 场景要求\n每个场景必须包含：\n1.  **对话内容 (dialogue_turns)**：一段包含2-4轮、有具体情景的英文对话。\n\
+            2.  **理解性问题 (comprehension_question_cn)**：一个关于对话内容的中文问题，可以问说话人的意图、某句话的含义、或者对话的某个细节。\n\
+            3.  **正确中文选项 (correct_option_cn)**：对上述问题的正确回答，必须是中文。\n4.  **干扰中文选项 (distractor_options_cn)**：一个或多个逻辑上看似合理但实际错误的中文干扰项。\n\
+            5.  **对于英语水平（level）的定义**：\n  - Level 1：能理解常见词汇与基本指令\n  - Level 2：能进行问候、自我介绍、表达喜好\n\
+            \  - Level 3：可用完整句型描述日常情境\n  - Level 4：能围绕熟悉话题进行连贯表达\n  - Level 5：表达较为流畅，能表达观点和理解一般文本\n\
+            \  - Level 6：能进行日常交流与基础书面表达\n\n# 强制规则 (MANDATORY RULES)\n-   所有字段，特别是`line`,\
+            \ `comprehension_question_cn`, `correct_option_cn`等，严禁为空字符串。\n-   问题和选项必须与对话内容紧密相关，且难度符合设定的语言等级。\n\
+            -   严格按照下面示例的JSON格式输出，不要添加任何额外的解释。\n\n# 输出格式\n请输出一个标准 JSON 对象，其中包含一个名为\
+            \ `scenarios` 的数组。\n\n## 示例输出 (输入: topic=\"打车\", level=\"Level 3\", card_quantity=1)\n\
+            {\n  \"scenarios\": [\n    {\n      \"dialogue_turns\": [\n        {\n\
+            \          \"speaker\": \"A\",\n          \"line\": \"What color is the\
+            \ cab coming in this way?\"\n        },\n        {\n          \"speaker\"\
+            : \"B\",\n          \"line\": \"what?\"\n        },\n        {\n     \
+            \     \"speaker\": \"A\",\n          \"line\": \"I said what is the color\
+            \ of your cab?\"\n        }\n      ],\n      \"comprehension_question_cn\"\
+            : \"刚刚说话的人A最后是什么意思？\",\n      \"correct_option_cn\": \"她想知道出租车的颜色。\",\n\
+            \      \"distractor_options_cn\": [\n        \"她想去机场。\",\n        \"她想付钱。\"\
+            \n      ]\n    }\n  ]\n}"
+        selected: false
+        title: 理解场景生成
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1753671925489'
+      position:
+        x: 902.0493841724706
+        y: 298.3751944853851
+      positionAbsolute:
+        x: 902.0493841724706
+        y: 298.3751944853851
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import random\nimport time\nimport json\n\ndef main(llm_string_output:\
+          \ str) -> dict:\n    processed_scenarios = []\n    \n    try:\n        data\
+          \ = json.loads(llm_string_output)\n        scenarios_list = data.get(\"\
+          scenarios\", [])\n    except json.JSONDecodeError:\n        return {\"error\"\
+          : f\"Input string is not a valid JSON. Content: {llm_string_output}\", \"\
+          processed_scenarios\": []}\n\n    if not scenarios_list:\n        return\
+          \ {\"error\": \"No scenarios found in the parsed JSON.\", \"processed_scenarios\"\
+          : []}\n\n    for scenario in scenarios_list:\n        try:\n           \
+          \ # --- START: 本次主要修改区域 ---\n            dialogue_turns = scenario.get(\"\
+          dialogue_turns\", [])\n            formatted_question_list = []\n      \
+          \      \n            # 假设第一个说话人是 \"left_girl\"，然后交替\n            speaker_map\
+          \ = {}\n            for i, turn in enumerate(dialogue_turns):\n        \
+          \        speaker = turn.get(\"speaker\")\n                if speaker not\
+          \ in speaker_map:\n                    # 如果是新出现的说话人，根据当前已记录的说话人数量分配角色\n\
+          \                    role = \"left_girl\" if len(speaker_map) % 2 == 0 else\
+          \ \"right_girl\"\n                    speaker_map[speaker] = role\n\n  \
+          \              formatted_question_list.append({\n                    \"\
+          role\": speaker_map[speaker],\n                    \"type\": \"eng_cn_audio\"\
+          ,\n                    \"eng\": turn.get(\"line\", \"\"),\n            \
+          \        \"audio_url\": True\n                })\n            # --- END:\
+          \ 本次主要修改区域 ---\n\n            correct_text = scenario.get(\"correct_option_cn\"\
+          )\n            all_options_text = [correct_text] + scenario.get(\"distractor_options_cn\"\
+          , [])\n            random.shuffle(all_options_text)\n            \n    \
+          \        final_options = []\n            answer_key = \"\"\n           \
+          \ for i, text in enumerate(all_options_text):\n                key = chr(65\
+          \ + i)\n                option_data = { \"key\": key, \"type\": \"text\"\
+          , \"text\": text }\n                final_options.append(option_data)\n\
+          \                if text == correct_text:\n                    answer_key\
+          \ = key\n            \n            processed_scenario = {\n            \
+          \    # 不再需要 conversation_id 和 message_end\n                \"question_turns\"\
+          : formatted_question_list, # 传递处理好的对话列表\n                \"dialogue_turns_text_only\"\
+          : dialogue_turns, # 保留原始对话用于审核\n                \"comprehension_question_cn\"\
+          : scenario.get(\"comprehension_question_cn\", \"\"),\n                \"\
+          answer_key\": answer_key,\n                \"options\": final_options\n\
+          \            }\n            processed_scenarios.append(processed_scenario)\n\
+          \n        except Exception as e:\n            print(f\"Error processing\
+          \ a scenario: {e}\")\n            continue\n            \n    return {\"\
+          processed_scenarios\": processed_scenarios}"
+        code_language: python3
+        desc: ''
+        outputs:
+          processed_scenarios:
+            children: null
+            type: array[object]
+        selected: false
+        title: 场景处理与选项格式化
+        type: code
+        variables:
+        - value_selector:
+          - '1753671925489'
+          - text
+          variable: llm_string_output
+      height: 54
+      id: '1753672356709'
+      position:
+        x: 1328.8658129030878
+        y: 298.3751944853851
+      positionAbsolute:
+        x: 1328.8658129030878
+        y: 298.3751944853851
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        selected: false
+        template: "{% for scenario in processed_scenarios %}\n{\n    \"template\"\
+          : \"t000008\",\n    \"remark\": \"对话理解\",\n    \"type\":\"H\",\n    \"topic_id\"\
+          :\"{{ cid }}\",\n    \"topic\":\"{{ topic }}\",\n    \"level\":\"{{ level\
+          \ }}\",\n    \"vocabulary_group\":\"A\",\n    \"question\": [\n        {#\
+          \ 新增的循环，用于生成每一句对话 #}\n        {% for turn in scenario['question_turns']\
+          \ %}\n        {\n            \"role\": \"{{ turn['role'] }}\",\n       \
+          \     \"type\": \"eng_cn_audio\",\n            \"eng\": \"{{ turn['eng']\
+          \ | e }}\",\n            \"audio_url\": true\n        }{% if not loop.last\
+          \ %},{% endif %}\n        {% endfor %}\n    ],\n    \"title\": \"{{ scenario['comprehension_question_cn']\
+          \ | e }}\",\n    \"title_position\": 2,\n    \"answer_type\": \"text\",\n\
+          \    \"answer\": \"{{ scenario['answer_key'] }}\",\n    \"answer_input\"\
+          : \"radio\",\n    \"options\": [\n        {% for option in scenario['options']\
+          \ %}\n        {\n            \"key\": \"{{ option['key'] }}\",\n       \
+          \     \"type\": \"text\",\n            \"text\": \"{{ option['text'] | e\
+          \ }}\"\n        }{% if not loop.last %},{% endif %}\n        {% endfor %}\n\
+          \    ]\n}\n{% if not loop.last %},{% endif %}\n{% endfor %}"
+        title: 生成最终JSON 2
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1753672356709'
+          - processed_scenarios
+          variable: processed_scenarios
+        - value_selector:
+          - '1753336166559'
+          - topic
+          value_type: string
+          variable: topic
+        - value_selector:
+          - '1753336166559'
+          - level
+          value_type: string
+          variable: level
+        - value_selector:
+          - '1753336166559'
+          - cid
+          value_type: string
+          variable: cid
+      height: 54
+      id: '1753672437742'
+      position:
+        x: 1667.8211984834427
+        y: 298.3751944853851
+      positionAbsolute:
+        x: 1667.8211984834427
+        y: 298.3751944853851
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4.1-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 1072fafb-9760-4a13-854b-0b9c4bb99339
+          role: system
+          text: "# 角色\n您是一位严谨的AI教研内容质检专家，负责对JSON格式的“对话理解”题卡数据进行自动化质量审核。\n\n# 任务\n\
+            请对以下输入的JSON数据 ({{{{#1753672437742.output#}}}}) 进行严格的、逐项的校验。\n\n# 核心校验规则\n\
+            1.  **字段与格式**: `template` 必须是 `\"t000008\"`。`options` 必须是包含至少2个对象的非空数组。\n\
+            2.  **Question结构校验**: `question`字段必须是一个**非空数组**，且数组内的每个对象都必须包含`role`,\
+            \ `type`, `eng`, `audio_url`这四个键。\n3.  **逻辑一致性 (最重要)**:\n    -   根据`question`数组中呈现的完整对话内容，判断`title`中的问题是否与对话相关。\n\
+            \    -   判断`answer`字段指向的正确选项，其内容是否真的是对`title`问题的正确回答。\n\n# 输出要求\n返回标准JSON格式结果。\n\
+            { \"is_valid\": bool, \"error_details\": [], \"validated_data\": {} }"
+        selected: false
+        title: '题目准确性校验 '
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '17536724640920'
+      position:
+        x: 2009.2604710189908
+        y: 298.3751944853851
+      positionAbsolute:
+        x: 2009.2604710189908
+        y: 298.3751944853851
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        selected: false
+        template: "{% for scenario in processed_scenarios %}\n## ❏ 卡片审核清单 (对话理解)\n\
+          \n---\n\n### **1. 基本信息**\n- **对话ID**: `{{ scenario['conversation_id'] }}`\n\
+          - **模板类型**: `t000008` (对话理解)\n\n### **2. 对话内容预览**\n{% for turn in scenario['dialogue_turns_text_only']\
+          \ %}\n- **{{ turn['speaker'] }}**: {{ turn['line'] }}\n{% endfor %}\n\n\
+          ### **3. 理解题任务**\n- **问题 (中文)**: {{ scenario['comprehension_question_cn']\
+          \ }}\n- **选项列表**:\n{% for option in scenario['options'] %}\n  - **[{{ option['key']\
+          \ }}]**: {{ option['text'] }}{% if option['key'] == scenario.answer_key\
+          \ %}  **<-- ✅ 正确答案**{% endif %}\n{% endfor %}\n\n### **4. 校验要点**\n- [ ]\
+          \ 问题是否清晰，且与对话内容紧密相关？\n- [ ] 正确答案是否准确无误？\n- [ ] 干扰项是否有迷惑性且不含争议？\n- [ ] 整体难度是否符合设定的语言等级？\n\
+          \n{% if not loop.last %}\n========================================\n{% endif\
+          \ %}\n{% endfor %}"
+        title: 人工审核格式转换 -11
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1753672356709'
+          - processed_scenarios
+          variable: processed_scenarios
+      height: 54
+      id: '17536724676350'
+      position:
+        x: 2328.156505206653
+        y: 298.3751944853851
+      positionAbsolute:
+        x: 2328.156505206653
+        y: 298.3751944853851
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4.1-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: be234b27-fc9b-4003-8da4-e0994cda10d4
+          role: system
+          text: "# 角色\n您是一位经验丰富的儿童英语教研专家，擅长围绕主题设计词汇学习游戏，对教学内容的标准化有严格要求。\n\n# 任务\n\
+            请根据用户输入的 **话题 ({{{{#1753336166559.topic#}}}})**、**英语水平 ({{{{#1753336166559.level#}}}})**\
+            \ 和 **卡片数量 ({{{{#1753336166559.num_questions_type_10#}}}})**，创作出指定数量的、各自独立的“音频配对”游戏场景。\n\
+            \n# 内容要求\n每个独立的游戏场景都必须包含：\n1.  **主题短语 (theme_phrase)**: 一个与话题相关的、用作卡片顶部展示的英文短语。\n\
+            2.  **词汇配对 (vocabulary_pairs)**: 一个包含3-5个中英文词汇配对的列表。\n3.  **对于英语水平（level）的定义**：\n\
+            \  - Level 1：能理解常见词汇与基本指令\n  - Level 2：能进行问候、自我介绍、表达喜好\n  - Level 3：可用完整句型描述日常情境\n\
+            \  - Level 4：能围绕熟悉话题进行连贯表达\n  - Level 5：表达较为流畅，能表达观点和理解一般文本\n  - Level\
+            \ 6：能进行日常交流与基础书面表达\n\n# 强制规则 (MANDATORY RULES)\n-   **翻译准确性**: `cn`字段必须是`eng`字段在中国大陆地区最常用、最标准的简体中文翻译。避免使用过于口语化、地域性或生僻的表达。例如，对于\
+            \ \"take a taxi\"，优先使用“打车”或“乘坐出租车”，而不是“搭的士”。\n-   所有内容必须严格符合指定的语言等级和话题。\n\
+            -   严格按照下面示例的JSON格式输出，最外层是一个包含 `card_quantity` 个场景对象的 `scenarios` 数组。\n\
+            \n# 输出格式\n请输出一个标准 JSON 对象。\n\n## 示例输出 (输入: topic=\"打车\", level=\"Level\
+            \ 1\", card_quantity=1)\n{\n  \"scenarios\": [\n    {\n      \"theme_phrase\"\
+            : \"Let's Go by Taxi!\",\n      \"vocabulary_pairs\": [\n        { \"\
+            eng\": \"taxi\", \"cn\": \"出租车\" },\n        { \"eng\": \"driver\", \"\
+            cn\": \"司机\" },\n        { \"eng\": \"fare\", \"cn\": \"车费\" }\n     \
+            \ ]\n    }\n  ]\n}"
+        selected: false
+        title: 词汇与主题生成
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1753673016249'
+      position:
+        x: 902.0493841724706
+        y: 14.415215597157882
+      positionAbsolute:
+        x: 902.0493841724706
+        y: 14.415215597157882
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import random\nimport time\nimport json\n\ndef main(llm_string_output:\
+          \ str) -> dict:\n    \n    try:\n        data = json.loads(llm_string_output)\n\
+          \        scenarios_list = data.get(\"scenarios\", [])\n    except json.JSONDecodeError:\n\
+          \        return {\"error\": \"Input is not valid JSON.\", \"processed_cards\"\
+          : []}\n\n    if not scenarios_list:\n        return {\"error\": \"No scenarios\
+          \ found.\", \"processed_cards\": []}\n\n    processed_cards = []\n    for\
+          \ scenario in scenarios_list:\n        theme_phrase = scenario.get(\"theme_phrase\"\
+          , \"Default Theme\")\n        vocab_pairs = scenario.get(\"vocabulary_pairs\"\
+          , [])\n        \n        if not vocab_pairs:\n            continue\n\n \
+          \       left_options = []\n        right_options = []\n\n        for pair\
+          \ in vocab_pairs:\n            eng_word = pair.get(\"eng\")\n          \
+          \  cn_word = pair.get(\"cn\")\n            if not eng_word or not cn_word:\
+          \ continue\n            \n            key = eng_word\n\n            # 构建新的\
+          \ left_options 结构\n            left_options.append({\n                \"\
+          key\": key,\n                \"type\": \"audio\",\n                \"audio_url\"\
+          : True \n            })\n            # 构建新的 right_options 结构\n         \
+          \   right_options.append({\n                \"key\": key,\n            \
+          \    \"type\": \"text\",\n                \"text\": cn_word\n          \
+          \  })\n\n        # 独立随机打乱两个列表\n        random.shuffle(left_options)\n  \
+          \      random.shuffle(right_options)\n\n        processed_cards.append({\n\
+          \            \"theme_phrase\": theme_phrase,\n            \"left_options\"\
+          : left_options,\n            \"right_options\": right_options,\n       \
+          \ })\n            \n    return {\"processed_cards\": processed_cards}"
+        code_language: python3
+        desc: ''
+        outputs:
+          processed_cards:
+            children: null
+            type: array[object]
+        selected: false
+        title: 配对处理与随机化
+        type: code
+        variables:
+        - value_selector:
+          - '1753673016249'
+          - text
+          variable: llm_string_output
+      height: 54
+      id: '1753673086906'
+      position:
+        x: 1328.8658129030878
+        y: 14.41521559715784
+      positionAbsolute:
+        x: 1328.8658129030878
+        y: 14.41521559715784
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4.1-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 56dd5c0f-4f22-42eb-a40d-77c938bab728
+          role: system
+          text: '# 角色
+
+            您是一位严谨的AI教研内容质检专家，负责对JSON格式的“音频配对”题卡数据进行自动化质量审核。
+
+
+            # 任务
+
+            请对以下输入的JSON数据{{#1753673197346.output#}}进行严格校验。
+
+
+            # 核心校验规则
+
+            1.  **字段完整性与格式**: 必须存在 `template`, `remark`, `question`, `left_options`,
+            `right_options` 字段。`answer`和`answer_type`字段不应存在。
+
+            2.  **Key一致性**: `left_options` 中的所有`key`的集合，必须与`right_options`中的所有`key`的集合完全相同。
+
+            3.  **内部结构**: `left_options`中每个对象的`type`必须是`"audio"`。`right_options`中每个对象的`type`必须是`"text"`。
+
+            4.  **翻译准确性 (最重要)**: 对于任意一个相同的key，在`left_options`中找到该key（它代表一个英文单词），在`right_options`中找到对应的中文`text`，判断它们是否是正确的翻译关系。
+
+
+            # 输出要求
+
+            返回标准JSON格式结果。
+
+            { "is_valid": bool, "error_details": [], "validated_data": {} }'
+        selected: false
+        title: '题目准确性校验 '
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1753673132811'
+      position:
+        x: 2009.2604710189908
+        y: 14.41521559715784
+      positionAbsolute:
+        x: 2009.2604710189908
+        y: 14.41521559715784
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        selected: false
+        template: "{% for card in processed_cards %}\n{\n    \"template\": \"t000007\"\
+          ,\n    \"remark\": \"音频配对\",\n    \"type\":\"G\",\n    \"topic_id\":\"{{\
+          \ cid }}\",\n    \"topic\":\"{{ topic }}\",\n    \"level\":\"{{ level }}\"\
+          ,\n    \"vocabulary_group\":\"A\",\n    \"question\": [\n        {\n   \
+          \         \"role\": \"theme_with_image\",\n            \"type\": \"image_eng_audio\"\
+          ,\n            \"eng\": \"{{ card['theme_phrase'] | e }}\",\n          \
+          \  \"audio_url\": true,\n            \"image_url\": true\n        }\n  \
+          \   ],\n    \"title\": \"选择配对\", \n    \"title_position\": 2, \n    \"answer_input\"\
+          : \"match\", \n    \"left_options\": {{ card['left_options'] | tojson }},\n\
+          \    \"right_options\": {{ card['right_options'] | tojson }}\n}\n{% if not\
+          \ loop.last %},{% endif %}\n{% endfor %}"
+        title: 生成最终JSON 1
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1753673086906'
+          - processed_cards
+          variable: processed_cards
+        - value_selector:
+          - '1753336166559'
+          - topic
+          value_type: string
+          variable: topic
+        - value_selector:
+          - '1753336166559'
+          - level
+          value_type: string
+          variable: level
+        - value_selector:
+          - '1753336166559'
+          - cid
+          value_type: string
+          variable: cid
+      height: 54
+      id: '1753673197346'
+      position:
+        x: 1667.8211984834427
+        y: 14.415215597157882
+      positionAbsolute:
+        x: 1667.8211984834427
+        y: 14.415215597157882
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        selected: false
+        template: '{% for card in processed_cards %}
+
+          ## ❏ 卡片审核清单 (音频配对)
+
+
+          ---
+
+
+          ### **1. 核心内容**
+
+          - **主题短语**: {{ card[''theme_phrase''] }}
+
+          - **模板类型**: `t000007` (音频配对)
+
+
+          ### **2. 配对词汇列表 (审核员请检查翻译是否准确)**
+
+
+          | 英文 (English) | 中文 (Chinese) |
+
+          | :--- | :--- |
+
+          {% for left_item in card[''left_options''] %}
+
+          {% set current_key = left_item[''key''] %}
+
+          {% for right_item in card[''right_options''] if right_item[''key''] == current_key
+          %}
+
+          | {{ left_item[''key''] }} | {{ right_item[''text''] }} |
+
+          {% endfor %}
+
+          {% endfor %}
+
+
+          ### **3. 校验要点**
+
+          - [ ] 主题短语是否与词汇相关？
+
+          - [ ] 所有中英文翻译是否准确、地道？
+
+          - [ ] 词汇难度是否符合设定的语言等级？
+
+
+          {% if not loop.last %}
+
+          ========================================
+
+          {% endif %}
+
+          {% endfor %}'
+        title: 人工审核格式转换-10
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1753673086906'
+          - processed_cards
+          variable: processed_cards
+      height: 54
+      id: '17536732746160'
+      position:
+        x: 2328.156505206653
+        y: 14.41521559715784
+      positionAbsolute:
+        x: 2328.156505206653
+        y: 14.41521559715784
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import random\nimport time\nimport json\n\ndef main(llm_string_output:\
+          \ str) -> dict:\n    processed_scenarios = []\n    \n    try:\n        data\
+          \ = json.loads(llm_string_output)\n        scenarios_list = data.get(\"\
+          scenarios\", [])\n    except json.JSONDecodeError:\n        return {\"error\"\
+          : f\"Input string is not a valid JSON. Content: {llm_string_output}\", \"\
+          processed_scenarios\": []}\n\n    if not scenarios_list:\n        return\
+          \ {\"error\": \"No scenarios found in the parsed JSON.\", \"processed_scenarios\"\
+          : []}\n\n    for scenario in scenarios_list:\n        try:\n           \
+          \ # --- START: 本次主要修改区域 ---\n            dialogue_turns = scenario.get(\"\
+          dialogue_turns\", [])\n            formatted_question_list = []\n      \
+          \      speaker_map = {}\n            for i, turn in enumerate(dialogue_turns):\n\
+          \                speaker = turn.get(\"speaker\")\n                if speaker\
+          \ not in speaker_map:\n                    role = \"left_girl\" if len(speaker_map)\
+          \ % 2 == 0 else \"right_girl\"\n                    speaker_map[speaker]\
+          \ = role\n\n                formatted_question_list.append({\n         \
+          \           \"role\": speaker_map[speaker],\n                    \"type\"\
+          : \"eng_cn_audio\",\n                    \"eng\": turn.get(\"line\", \"\"\
+          ),\n                    \"audio_url\": True\n                })\n      \
+          \      # --- END: 本次主要修改区域 ---\n\n            processed_scenario = {\n \
+          \               \"question_turns\": formatted_question_list, # 传递处理好的对话列表\n\
+          \                \"dialogue_turns_text_only\": dialogue_turns, # 保留原始对话用于审核\n\
+          \                \"prompt_for_user_cn\": scenario.get(\"prompt_for_user_cn\"\
+          , \"\"),\n                \"correct_answer_en\": scenario.get(\"correct_answer_en\"\
+          , \"\")\n            }\n            processed_scenarios.append(processed_scenario)\n\
+          \n        except Exception as e:\n            print(f\"Error processing\
+          \ a scenario: {e}\")\n            continue\n            \n    return {\"\
+          processed_scenarios\": processed_scenarios}"
+        code_language: python3
+        desc: ''
+        outputs:
+          processed_scenarios:
+            children: null
+            type: array[object]
+        selected: false
+        title: 场景处理
+        type: code
+        variables:
+        - value_selector:
+          - '1753346134162'
+          - text
+          variable: llm_string_output
+      height: 54
+      id: '1753759688876'
+      position:
+        x: 1328.8658129030878
+        y: 1154.2996047244285
+      positionAbsolute:
+        x: 1328.8658129030878
+        y: 1154.2996047244285
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1753673197346'
+          - output
+          variable: 音频配对
+        - value_selector:
+          - '1753672437742'
+          - output
+          variable: 对话理解
+        - value_selector:
+          - '17536688854790'
+          - output
+          variable: 听音重组
+        - value_selector:
+          - '1753342086794'
+          - output
+          variable: 选择应答
+        - value_selector:
+          - '17533461952642'
+          - output
+          variable: 口语应答
+        selected: false
+        title: 结束 6
+        type: end
+      height: 194
+      id: '1754286021242'
+      position:
+        x: 2736.3415211040106
+        y: 542.5780756868085
+      positionAbsolute:
+        x: 2736.3415211040106
+        y: 542.5780756868085
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: 285.28755053450914
+      y: 90.50526141403597
+      zoom: 0.32113052002740944
